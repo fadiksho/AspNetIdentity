@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetIdentity_CustomStorageProviders", "AspNetIdentity_CustomStorageProviders\AspNetIdentity_CustomStorageProviders.csproj", "{CE0B7B36-72D4-4994-8413-3DD08B91A939}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetIdentity_CustomStorageProviders", "AspNetIdentity_CustomStorageProviders\AspNetIdentity_CustomStorageProviders.csproj", "{CE0B7B36-72D4-4994-8413-3DD08B91A939}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetIdentity_CustomStorageProviders.Domain", "AspNetIdentity_CustomStorageProviders.Domain\AspNetIdentity_CustomStorageProviders.Domain.csproj", "{219E628C-65DD-4D39-B251-22E44FFDD73A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetIdentity_CustomStorageProviders.Data", "AspNetIdentity_CustomStorageProviders.Data\AspNetIdentity_CustomStorageProviders.Data.csproj", "{B4308CE3-0AE4-46D2-B346-7A3EA42F583E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{CE0B7B36-72D4-4994-8413-3DD08B91A939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE0B7B36-72D4-4994-8413-3DD08B91A939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE0B7B36-72D4-4994-8413-3DD08B91A939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{219E628C-65DD-4D39-B251-22E44FFDD73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{219E628C-65DD-4D39-B251-22E44FFDD73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{219E628C-65DD-4D39-B251-22E44FFDD73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{219E628C-65DD-4D39-B251-22E44FFDD73A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4308CE3-0AE4-46D2-B346-7A3EA42F583E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4308CE3-0AE4-46D2-B346-7A3EA42F583E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4308CE3-0AE4-46D2-B346-7A3EA42F583E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4308CE3-0AE4-46D2-B346-7A3EA42F583E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
