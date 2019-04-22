@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using AspNetIdentity_CustomStorageProviders.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AspNetIdentity_CustomStorageProviders.Identity;
+using AspNetIdentity_CustomStorageProviders.Models;
+using AspNetIdentity_CustomStorageProviders.Domain;
+using AspNetIdentity_CustomStorageProviders.Data;
 
 namespace AspNetIdentity_CustomStorageProviders
 {
@@ -38,7 +33,11 @@ namespace AspNetIdentity_CustomStorageProviders
 
 
       services.AddIdentity<ApplicationUser, IdentityRole>()
-          .AddDefaultTokenProviders();
+        .AddCustomStores()
+        .AddDefaultTokenProviders();
+
+      services.AddScoped<IUnitOfWork, DapperUnitOfWork>(provider =>
+        new DapperUnitOfWork(Configuration.GetConnectionString("DefaultConnection")));
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
     }
@@ -67,8 +66,12 @@ namespace AspNetIdentity_CustomStorageProviders
       app.UseMvc(routes =>
       {
         routes.MapRoute(
-                  name: "default",
-                  template: "{controller=Home}/{action=Index}/{id?}");
+          name: "Users/{username}",
+          "Profile/{username}",
+          new { controller = "User", action = "Profile", username = "" });
+        routes.MapRoute(
+          name: "default",
+          template: "{controller=Home}/{action=Index}/{id?}");
       });
     }
   }

@@ -5,11 +5,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspNetIdentity_CustomStorageProviders.Models;
+using AspNetIdentity_CustomStorageProviders.Domain;
 
 namespace AspNetIdentity_CustomStorageProviders.Controllers
 {
   public class HomeController : Controller
   {
+    private readonly IUnitOfWork unitOfWork;
+
+    public HomeController(IUnitOfWork unitOfWork)
+    {
+      this.unitOfWork = unitOfWork;
+    }
     public IActionResult Index()
     {
       return View();
